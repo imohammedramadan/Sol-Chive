@@ -1,0 +1,82 @@
+// font import
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+
+//reset
+:root {
+  --background-color-primary: rgba(36, 36, 35, 1);
+  --background-color-secondary: rgba(51, 53, 51, 1);
+  --text-color-primary: rgba(255, 255, 255, 1);
+  --text-color-primary-disabled: rgba(255, 255, 255, 0.39);
+  --text-color-secondary: rgba(232, 237, 223, 1);
+  --text-color-tertiary: rgba(207, 219, 213, 1);
+  --text-color-dark: rgba(33, 33, 33, 1);
+  --text-color-grey: rgba(97, 97, 97, 1);
+  --orange-100: rgba(245, 203, 92, 1);
+  --orange-200: rgba(235, 163, 64, 1);
+  --error-text-color: rgba(255, 122, 122, 1);
+  --error-background-color: rgba(255, 122, 122, 0.1);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  color: var(--text-color-primary);
+  font-family: "Poppins", Helvetica, sans-serif;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  background-color: var(--background-color-primary);
+}
+
+a {
+  color: var(--text-color-primary);
+  text-decoration: none;
+}
+
+//globals
+.sr-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.container {
+  width: 70%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
