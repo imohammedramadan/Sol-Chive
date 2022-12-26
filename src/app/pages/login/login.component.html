@@ -1,0 +1,90 @@
+<app-header [isEmptyHeader]="true"></app-header>
+<main>
+  <div class="hero">
+    <div class="greeting">
+      <h1>Welcome</h1>
+    </div>
+    <div class="join">
+      <h2 class="join__title">Login or Join us via</h2>
+      <ul class="join__list">
+        <li class="join__item">
+          <button type="button" class="join__btn facebook__btn">
+            <p class="sr-only">Facebook</p>
+            <ng-icon
+              class="icon__facebook btn__icon"
+              name="featherFacebook"
+              size="35px"
+            ></ng-icon>
+          </button>
+        </li>
+        <li class="join__item">
+          <button type="button" class="join__btn github__btn">
+            <p class="sr-only">Github</p>
+            <ng-icon
+              class="icon__github btn__icon"
+              name="featherGithub"
+              size="35px"
+            ></ng-icon>
+          </button>
+        </li>
+        <li class="join__item">
+          <a
+            type="button"
+            class="join__btn google__btn"
+            href="{{ googleLoginUrl }}"
+          >
+            <p class="sr-only">Google</p>
+            <ng-icon
+              class="icon__google btn__icon"
+              name="featherChrome"
+              size="35px"
+            ></ng-icon>
+          </a>
+        </li>
+        <li class="join__item">
+          <button type="button" class="join__btn twitter__btn">
+            <p class="sr-only">Twitter</p>
+            <ng-icon
+              class="icon__twitter btn__icon"
+              name="featherTwitter"
+              size="35px"
+            ></ng-icon>
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div class="separator">
+      <div class="separator__line"></div>
+      <p class="separator__text">or</p>
+      <div class="separator__line"></div>
+    </div>
+    <div class="search">
+      <form class="search__form">
+        <label for="search">Find another user:</label>
+        <div class="search__field">
+          <input
+            type="email"
+            name="search"
+            id="search"
+            placeholder="Enter email"
+            class="search__input"
+            required
+          />
+          <div class="search__icon">
+            <ng-icon
+              class="icon__home"
+              name="featherSearch"
+              size="12.4px"
+              color="var(--text-color-primary-disabled)"
+            ></ng-icon>
+          </div>
+        </div>
+        <div>
+          <button type="submit" class="search__btn">
+            <p>Find Now</p>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
