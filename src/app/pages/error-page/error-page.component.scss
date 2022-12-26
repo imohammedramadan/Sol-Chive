@@ -1,0 +1,53 @@
+main {
+  min-height: calc(100vh - (53px + 70px));
+  display: flex;
+  place-content: center;
+  place-items: center;
+  flex-direction: column;
+}
+
+.error {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  place-content: center;
+  place-items: center;
+
+  &__number {
+    color: var(--orange-100);
+    font-size: 130px;
+    font-weight: bold;
+  }
+
+  &__text {
+    color: var(--text-color-primary);
+    font-size: 30px;
+  }
+}
+
+.nav {
+  width: 110px;
+  height: 30px;
+  display: flex;
+
+  &__btn {
+    background-color: var(--orange-100);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    border-radius: 6px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--orange-200);
+    }
+  }
+
+  &__text {
+    color: var(--text-color-dark);
+    font-size: 20px;
+  }
+}

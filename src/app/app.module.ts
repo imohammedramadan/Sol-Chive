@@ -35,6 +35,7 @@ import { SearchComponent } from './components/search/search.component';
 import { SolutionListComponent } from './components/solution-list/solution-list.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
+import { ErrorPageComponent } from './pages/error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { LoginComponent } from './pages/login/login.component';
     HomeComponent,
     SolutionListComponent,
     NoSolutionsComponent,
+    ErrorPageComponent,
   ],
   imports: [
     BrowserModule,
