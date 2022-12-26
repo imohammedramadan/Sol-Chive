@@ -45,6 +45,5 @@ export class HomeComponent implements OnInit {
       .subscribe((solutionObject) => {
         this.solutions = solutionObject.solutions;
       });
-    console.log('Solutions', this.solutions);
   }
 }

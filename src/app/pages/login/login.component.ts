@@ -17,7 +17,6 @@ export class LoginComponent implements OnInit {
   googleLogin() {
     this.AuthenticationService.getGoogleLogin().subscribe((googleObject) => {
       this.googleLoginUrl = googleObject.redirectUrl;
-      console.log(this.googleLoginUrl);
     });
   }
 }
