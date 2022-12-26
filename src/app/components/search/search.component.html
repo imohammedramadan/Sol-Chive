@@ -1,0 +1,62 @@
+<form class="search__form">
+  <label for="search">Find another user:</label>
+  <div class="search__field">
+    <input
+      type="email"
+      name="search"
+      id="search"
+      placeholder="Enter email"
+      class="search__input"
+      required
+    />
+    <div class="search__btn">
+      <button type="submit">
+        <p class="sr-only">Search</p>
+        <ng-icon
+          class="icon__home"
+          name="featherSearch"
+          size="12.4px"
+          color="var(--text-color-primary-disabled)"
+        ></ng-icon>
+      </button>
+    </div>
+  </div>
+</form>
+
+<form class="search__form--compact">
+  <div class="activate__btn">
+    <button type="button" (click)="openSearchMenu()">
+      <p class="sr-only">Open Search</p>
+      <ng-icon
+        class="icon__home"
+        name="featherSearch"
+        size="24px"
+        color="var(--orange-100)"
+      ></ng-icon>
+    </button>
+  </div>
+  <div class="search__menu" *ngIf="isSearchMenuOpen">
+    <label for="search--compact">Find another user:</label>
+    <div class="search__field">
+      <input
+        type="email"
+        name="search"
+        id="search--compact"
+        placeholder="Enter email"
+        class="search__input"
+        required
+      />
+      <div class="search__btn">
+        <button type="submit">
+          <p class="sr-only">Search</p>
+          <ng-icon
+            class="icon__home"
+            name="featherSearch"
+            size="12.4px"
+            color="var(--text-color-primary-disabled)"
+          ></ng-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

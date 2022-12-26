@@ -1,0 +1,108 @@
+.search__form--compact {
+  display: none;
+}
+
+.search__form {
+  display: flex;
+  gap: 9px;
+  place-items: center;
+}
+
+.search__field {
+  display: flex;
+  place-items: center;
+  place-content: center;
+}
+
+.search__input {
+  background: var(--background-color-primary);
+  border: 1px solid var(--background-color-primary);
+  border-right: none;
+  border-top-left-radius: 9px;
+  border-bottom-left-radius: 9px;
+  width: 19vw;
+  height: 27px;
+  padding: 0px 8px;
+  font-size: 12px;
+
+  &::placeholder {
+    color: var(--text-color-primary-disabled);
+  }
+
+  &:focus-visible {
+    outline: none;
+    border: 1px solid var(--orange-100);
+    border-right: none;
+
+    & + .search__btn button {
+      border: 1px solid var(--orange-100);
+      border-left: none;
+    }
+  }
+}
+
+.search__btn {
+  button {
+    display: flex;
+    place-content: center;
+    place-items: center;
+    background-color: var(--background-color-primary);
+    outline: none;
+    border-top-right-radius: 9px;
+    border-bottom-right-radius: 9px;
+    height: 27px;
+    cursor: pointer;
+    border: 1px solid var(--background-color-primary);
+    border-left: none;
+  }
+}
+
+@media (max-width: 992px) {
+  .search__form {
+    flex-direction: column;
+
+    .search__input {
+      width: 180px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .search__form {
+    display: none;
+  }
+
+  .search__form--compact {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    place-items: center;
+
+    .activate__btn button {
+      background-color: var(--background-color-primary);
+      border: none;
+      border-radius: 9px;
+      display: flex;
+      width: 30px;
+      height: 30px;
+      place-content: center;
+      place-items: center;
+    }
+
+    .search__menu {
+      position: absolute;
+      top: 60px;
+      left: 0px;
+      right: 0px;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: var(--background-color-secondary);
+      padding: 10px;
+      border-radius: 9px;
+      display: flex;
+      flex-direction: column;
+      place-items: center;
+      gap: 10px;
+    }
+  }
+}

@@ -1,0 +1,93 @@
+<header [ngClass]="{ centered: isEmptyHeader }">
+  <a routerLink="/error">Error</a>
+  <nav class="container">
+    <ul class="nav" *ngIf="!isEmptyHeader">
+      <li class="nav__item nav__logo">
+        <h1 class="logo__text">
+          <span class="logo__text--yellow">Sol</span>-Chive
+        </h1>
+      </li>
+
+      <li class="nav__item nav__search">
+        <app-search></app-search>
+      </li>
+
+      <li class="nav__item nav__user">
+        <div class="nav__user__join" *ngIf="!isLoggedIn">
+          <a><p>Join us or Login</p></a>
+        </div>
+
+        <div class="nav__user__logged" *ngIf="isLoggedIn">
+          <div class="hamburger__btn">
+            <button type="button" (click)="activateMenu()">
+              <p class="sr-only">Menu</p>
+              <ng-icon
+                class="icon__menu"
+                name="featherMenu"
+                size="24px"
+                color="var(--orange-100)"
+              ></ng-icon>
+            </button>
+          </div>
+          <ul class="user__menu" [ngClass]="{ active__menu: isUserMenuOpen }">
+            <li class="user__home">
+              <a routerLink="/home">
+                <p class="sr-only">Home</p>
+                <ng-icon
+                  class="icon__home"
+                  name="featherHome"
+                  size="24px"
+                  color="var(--orange-100)"
+                ></ng-icon>
+              </a>
+            </li>
+
+            <li class="user__profile">
+              <a class="user__link">
+                <div class="user__img">
+                  <!-- <img
+                    src="{{ user.picture }}"
+                    alt="{{ user.name }}"
+                    width="28px"
+                    height="28px"
+                  /> -->
+                  <img
+                    src="https://cdn.discordapp.com/attachments/1034581559157739552/1055904317783154838/osamaMammar_superhero__hiro__hamada_hiro_character__sketch_cart_9d00b58f-1e3a-4e7d-9165-c79a287ee17c.png"
+                    alt="{{ user.name }}"
+                    width="28px"
+                    height="28px"
+                  />
+                </div>
+                <div class="user__name">
+                  <a routerLink="/profile/{{ user.email }}"
+                    ><p>{{ user.name }}</p></a
+                  >
+                </div>
+              </a>
+            </li>
+
+            <li class="user__logout">
+              <button type="button" (click)="logout()">
+                <p class="sr-only">Logout</p>
+                <ng-icon
+                  class="icon__home"
+                  name="featherLogOut"
+                  size="24px"
+                  color="var(--error-text-color)"
+                ></ng-icon>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+
+    <ul class="nav" *ngIf="isEmptyHeader">
+      <li class="nav__item nav__logo">
+        <h1 class="logo__text">
+          <span class="logo__text--yellow">Sol</span>-Chive
+        </h1>
+      </li>
+    </ul>
+  </nav>
+</header>

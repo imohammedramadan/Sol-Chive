@@ -28,9 +28,11 @@ import {
 } from '@ng-icons/feather-icons';
 
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './components/header/header.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HeaderComponent, SearchComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
