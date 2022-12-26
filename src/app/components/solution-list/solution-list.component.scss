@@ -40,7 +40,7 @@
   .info__source {
     font-size: 12px;
     color: var(--orange-200);
-    background-color: var(--orange-100-dim);
+    background-color: var(--orange-100-dark);
     padding: 2px 6px;
     border-radius: 8px;
     border: solid 1px var(--orange-200);
@@ -54,7 +54,7 @@
   height: 20px;
 
   &:hover {
-    background-color: var(--orange-200);
+    background-color: var(--orange-100-dim);
   }
   a {
     cursor: pointer;
@@ -114,7 +114,7 @@
   color: var(--orange-100);
 
   &:hover {
-    background-color: var(--orange-100);
+    background-color: var(--orange-100-dim);
     color: var(--text-color-dark);
   }
 }

@@ -41,7 +41,7 @@ header {
   border-radius: 6px;
 
   &:hover {
-    background-color: var(--orange-200);
+    background-color: var(--orange-100-dim);
   }
 
   a {
@@ -88,9 +88,9 @@ header {
       .user__img {
         width: 28px;
         height: 28px;
-        border-radius: 100%;
+        border-radius: 100px;
         img {
-          border-radius: 100%;
+          border-radius: 100px;
         }
       }
     }
@@ -139,7 +139,7 @@ header {
 
     padding: 20px;
     border-radius: 10px;
-    border: 2px solid var(--orange-100-dim);
+    border: 2px solid var(--orange-100-dark);
     transform: translateX(1000px);
   }
 

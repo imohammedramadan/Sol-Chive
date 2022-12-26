@@ -92,7 +92,6 @@ main {
     width: 362px;
     height: 33px;
     padding: 0px 8px;
-    font-size: 12px;
     color: var(--text-color-primary);
     font-size: 16px;
     &::placeholder {
@@ -126,7 +125,7 @@ main {
     cursor: pointer;
 
     &:hover {
-      background-color: var(--orange-200);
+      background-color: var(--orange-100-dim);
     }
     p {
       color: var(--text-color-dark);
