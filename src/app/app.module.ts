@@ -36,6 +36,8 @@ import { SolutionListComponent } from './components/solution-list/solution-list.
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { ProfileCardComponent } from './components/profile-card/profile-card.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,8 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
     SolutionListComponent,
     NoSolutionsComponent,
     ErrorPageComponent,
+    ProfileComponent,
+    ProfileCardComponent,
   ],
   imports: [
     BrowserModule,

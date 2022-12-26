@@ -1,0 +1,36 @@
+<aside class="card">
+  <div class="card__avatar">
+    <!-- <img class="avatar__img" src="{{ user.picture }}" alt="" /> -->
+    <img
+      class="avatar__img"
+      src="https://cdn.discordapp.com/attachments/1034581559157739552/1055904317783154838/osamaMammar_superhero__hiro__hamada_hiro_character__sketch_cart_9d00b58f-1e3a-4e7d-9165-c79a287ee17c.png"
+      alt="{{ user.name }}"
+    />
+  </div>
+  <h3 class="card__name">{{ user.name }}</h3>
+  <p class="card__email">{{ user.email }}</p>
+  <!-- <div class="card__about" *ngIf="user.about"> -->
+  <div class="card__about">
+    <h4 class="about__title">About</h4>
+    <p class="about__text" *ngIf="user.about">
+      {{ user.about }}
+    </p>
+    <p class="about__text" *ngIf="!user.about">
+      Hi, i am a backend lover, i am the one who said "Mongo de atkatab feha
+      kotob"
+    </p>
+  </div>
+  <div class="card__contacts">
+    <h4 class="contacts__title">Contacts</h4>
+    <p class="contacts__text">alien.com</p>
+    <p class="contacts__text">Kutt.it/alienvoid</p>
+    <p class="contacts__text">+20123456789</p>
+  </div>
+  <div class="card__problems">
+    <h4 class="problems__title">Solved:</h4>
+    <p class="problems__text">{{ user.problem_count }}</p>
+    <p class="problems__text">
+      Problem<span *ngIf="user.problem_count > 1">s</span>
+    </p>
+  </div>
+</aside>

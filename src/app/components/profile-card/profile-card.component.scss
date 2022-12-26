@@ -1,0 +1,65 @@
+.card {
+  background-color: var(--background-color-secondary);
+  max-width: 240px;
+  padding: 40px 15px 15px;
+  border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &__avatar {
+    display: flex;
+    place-content: center;
+    position: absolute;
+    bottom: 236px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__name {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  &__email {
+    font-size: 14px;
+    color: var(--text-color-tertiary);
+    text-align: center;
+  }
+
+  &__problems {
+    display: flex;
+    place-items: center;
+    gap: 4px;
+  }
+
+  &__about,
+  &__contacts,
+  &__problems {
+    margin-top: 10px;
+  }
+}
+
+.avatar__img {
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+}
+
+.about__title,
+.contacts__title,
+.problems__title {
+  font-size: 16px;
+  color: var(--text-color-primary);
+}
+
+.about__text {
+  font-size: 12px;
+  color: var(--text-color-secondary);
+}
+
+.contacts__text,
+.problems__text {
+  font-size: 12px;
+  color: var(--text-color-secondary);
+}

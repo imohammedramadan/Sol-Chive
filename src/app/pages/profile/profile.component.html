@@ -1,0 +1,12 @@
+<app-header [isEmptyHeader]="false" [isLoggedIn]="true"></app-header>
+
+<main>
+  <app-profile-card class="profile"></app-profile-card>
+  <div class="solutions">
+    <app-no-solutions *ngIf="!solutions[0]"></app-no-solutions>
+    <app-solution-list
+      [solutions]="solutions"
+      *ngIf="solutions[0]"
+    ></app-solution-list>
+  </div>
+</main>
