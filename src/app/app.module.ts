@@ -3,14 +3,59 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { NgIconsModule } from '@ng-icons/core';
 import { AppRoutingModule } from './app-routing.module';
+
+import {
+  featherCheckCircle,
+  featherChevronDown,
+  featherChevronUp,
+  featherChrome,
+  featherCopy,
+  featherEdit,
+  featherExternalLink,
+  featherFacebook,
+  featherGithub,
+  featherHome,
+  featherLogOut,
+  featherMenu,
+  featherPlusCircle,
+  featherRefreshCcw,
+  featherSearch,
+  featherTrash,
+  featherTwitter,
+  featherXCircle,
+} from '@ng-icons/feather-icons';
 
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    NgIconsModule.withIcons({
+      featherHome,
+      featherLogOut,
+      featherSearch,
+      featherExternalLink,
+      featherCopy,
+      featherEdit,
+      featherChevronDown,
+      featherChevronUp,
+      featherCheckCircle,
+      featherXCircle,
+      featherRefreshCcw,
+      featherPlusCircle,
+      featherGithub,
+      featherFacebook,
+      featherTwitter,
+      featherChrome,
+      featherTrash,
+      featherMenu,
+    }),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
