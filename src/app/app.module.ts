@@ -28,18 +28,19 @@ import {
 } from '@ng-icons/feather-icons';
 
 import { AppComponent } from './app.component';
+import { AddSolutionBtnComponent } from './components/add-solution-btn/add-solution-btn.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NoSolutionsComponent } from './components/no-solutions/no-solutions.component';
+import { ProfileCardComponent } from './components/profile-card/profile-card.component';
 import { SearchComponent } from './components/search/search.component';
 import { SolutionListComponent } from './components/solution-list/solution-list.component';
+import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
+import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
-import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { ProfileComponent } from './pages/profile/profile.component';
-import { ProfileCardComponent } from './components/profile-card/profile-card.component';
-import { AddSolutionBtnComponent } from './components/add-solution-btn/add-solution-btn.component';
-
+import { CookieService } from 'ngx-cookie-service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +55,9 @@ import { AddSolutionBtnComponent } from './components/add-solution-btn/add-solut
     ProfileComponent,
     ProfileCardComponent,
     AddSolutionBtnComponent,
+    EditProfileComponent,
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -80,7 +83,7 @@ import { AddSolutionBtnComponent } from './components/add-solution-btn/add-solut
       featherMenu,
     }),
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

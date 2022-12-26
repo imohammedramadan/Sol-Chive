@@ -1,0 +1,77 @@
+<main>
+  <div class="heading">
+    <h2 class="heading__text">Edit Information</h2>
+  </div>
+
+  <div class="card">
+    <img
+      class="card__img"
+      src="{{ user.picture }}"
+      alt=""
+      width="70px"
+      height="70px"
+    />
+
+    <button class="card__btn" type="button">
+      <p class="btn__text">Load new avatar</p>
+      <ng-icon
+        class="icon__refresh"
+        name="featherRefreshCcw"
+        size="14px"
+      ></ng-icon>
+    </button>
+  </div>
+
+  <div class="info">
+    <form class="info__form">
+      <div class="form__name form__section">
+        <label for="name">Display Name</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Enter your name"
+          required
+        />
+      </div>
+      <div class="form__email form__section">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Enter your email"
+          required
+        />
+      </div>
+      <div class="form__about form__section">
+        <label for="about">About</label>
+        <textarea
+          name="about"
+          id="about"
+          cols="30"
+          rows="6"
+          placeholder="Write a short bio about yourself"
+        ></textarea>
+      </div>
+      <div class="form__contacts form__section">
+        <label for="contacts">Contacts</label>
+        <textarea
+          name="contacts"
+          id="contacts"
+          cols="30"
+          rows="6"
+          placeholder="Enter your contact information"
+        ></textarea>
+      </div>
+      <button type="submit" class="form__btn">
+        <p>Submit</p>
+        <ng-icon
+          class="icon__checkmark"
+          name="featherCheckCircle"
+          size="14px"
+        ></ng-icon>
+      </button>
+    </form>
+  </div>
+</main>
