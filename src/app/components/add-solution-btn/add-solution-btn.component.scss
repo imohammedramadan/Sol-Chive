@@ -1,0 +1,21 @@
+.btn__link {
+  display: flex;
+  place-content: center;
+  place-items: center;
+  gap: 7px;
+  background-color: var(--orange-100);
+  border-radius: 6px;
+  width: 92px;
+  height: 24px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--orange-200);
+  }
+
+  & p,
+  & .icon__add {
+    color: var(--text-color-dark);
+    font-size: 12px;
+  }
+}

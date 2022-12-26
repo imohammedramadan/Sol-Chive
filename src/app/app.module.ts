@@ -38,6 +38,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ProfileCardComponent } from './components/profile-card/profile-card.component';
+import { AddSolutionBtnComponent } from './components/add-solution-btn/add-solution-btn.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { ProfileCardComponent } from './components/profile-card/profile-card.com
     ErrorPageComponent,
     ProfileComponent,
     ProfileCardComponent,
+    AddSolutionBtnComponent,
   ],
   imports: [
     BrowserModule,
