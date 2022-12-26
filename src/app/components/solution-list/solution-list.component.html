@@ -1,0 +1,50 @@
+<ul class="solutions__list">
+  <li *ngFor="let solution of solutions" class="solution">
+    <div class="solution__info">
+      <div class="info__head">
+        <h3 class="info__title">{{ solution.title }}</h3>
+        <p class="info__source">{{ solution.source }}</p>
+      </div>
+      <div class="info__tags">
+        <ul class="tags__list">
+          <li class="tags__item" *ngFor="let tag of solution.tags">
+            <p>{{ tag }}</p>
+          </li>
+        </ul>
+      </div>
+      <div class="info__date">
+        <p>{{ solution.created_on.slice(0, 10) }}</p>
+      </div>
+      <div class="info__btn">
+        <a><p>View</p></a>
+      </div>
+    </div>
+
+    <div class="solution__controls">
+      <div class="controls__top">
+        <a class="solution__link">
+          <p class="sr-only">Go to Question</p>
+          <ng-icon
+            class="icon__link"
+            name="featherExternalLink"
+            size="14px"
+          ></ng-icon>
+        </a>
+        <button type="button" class="solution__edit">
+          <p class="sr-only">Edit</p>
+          <ng-icon class="icon__edit" name="featherEdit" size="14px"></ng-icon>
+        </button>
+      </div>
+      <div class="controls__bottom">
+        <button type="button" class="solution__delete">
+          <p class="sr-only">Delete</p>
+          <ng-icon
+            class="icon__delete"
+            name="featherTrash"
+            size="14px"
+          ></ng-icon>
+        </button>
+      </div>
+    </div>
+  </li>
+</ul>

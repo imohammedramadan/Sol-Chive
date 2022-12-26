@@ -1,0 +1,28 @@
+.empty {
+  display: flex;
+  gap: 10px;
+  background-color: var(--background-color-secondary);
+  max-width: 866px;
+  margin: 0 auto;
+  place-content: center;
+  place-items: center;
+  padding: 28px 10px;
+  border-radius: 9px;
+  &__text p {
+    font-size: 20px;
+  }
+
+  &__btn {
+    background-color: var(--orange-100);
+    border-radius: 6px;
+    width: 92px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .empty {
+    flex-direction: column;
+    text-align: center;
+  }
+}

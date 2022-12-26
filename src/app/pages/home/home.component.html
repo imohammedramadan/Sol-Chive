@@ -1,0 +1,15 @@
+<app-header
+  [isEmptyHeader]="false"
+  [isLoggedIn]="true"
+  [mail]="'madrasy101@gmail.com'"
+></app-header>
+<main>
+  <a routerLink="/profile/{{ user.email }}">{{ user.email }}</a>
+  <div class="solutions">
+    <app-no-solutions *ngIf="!solutions[0]"></app-no-solutions>
+    <app-solution-list
+      [solutions]="solutions"
+      *ngIf="solutions[0]"
+    ></app-solution-list>
+  </div>
+</main>

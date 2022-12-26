@@ -30,16 +30,22 @@ import {
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+import { NoSolutionsComponent } from './components/no-solutions/no-solutions.component';
 import { SearchComponent } from './components/search/search.component';
+import { SolutionListComponent } from './components/solution-list/solution-list.component';
+import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
     SearchComponent,
+    FooterComponent,
     LoginComponent,
+    HomeComponent,
+    SolutionListComponent,
+    NoSolutionsComponent,
   ],
   imports: [
     BrowserModule,
