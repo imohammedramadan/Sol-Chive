@@ -1,4 +1,8 @@
 //!use moment (date-fns alternative) for date handling in solution & solution-list
+//TODO Search Result(no result) (rename profile to search result and my profile to profile)
+//TODO Home Empty
+//TODO View Solution
+//TODO Home Error
 
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -26,6 +30,9 @@ import {
   featherTwitter,
   featherXCircle,
 } from '@ng-icons/feather-icons';
+
+import { FormsModule } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 
 import { AppComponent } from './app.component';
 import { AddSolutionBtnComponent } from './components/add-solution-btn/add-solution-btn.component';
@@ -62,6 +69,7 @@ import { CookieService } from 'ngx-cookie-service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     NgIconsModule.withIcons({
       featherHome,
       featherLogOut,
