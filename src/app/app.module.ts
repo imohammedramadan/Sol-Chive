@@ -49,6 +49,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { MyProfileComponent } from './pages/my-profile/my-profile.component';
 import { AddSolutionComponent } from './pages/add-solution/add-solution.component';
+import { SolutionComponent } from './pages/solution/solution.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,6 +68,7 @@ import { AddSolutionComponent } from './pages/add-solution/add-solution.componen
     EditProfileComponent,
     AddSolutionComponent,
     MyProfileComponent,
+    SolutionComponent,
   ],
 
   imports: [

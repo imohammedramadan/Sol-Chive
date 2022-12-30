@@ -1,0 +1,69 @@
+<main>
+  <div class="heading">
+    <div class="heading__text">
+      <h2 class="heading__title">{{ solution.title }}</h2>
+      <p class="heading__source">{{ solution.source }}</p>
+    </div>
+    <div class="heading__btns" *ngIf="isUserSolution">
+      <button type="button" class="edit__btn btn" (click)="enableEditMode()">
+        <p>Edit</p>
+        <ng-icon class="icon__edit" name="featherEdit" size="14px"></ng-icon>
+      </button>
+      <button type="button" class="delete__btn btn">
+        <p>Delete</p>
+        <ng-icon class="icon__delete" name="featherTrash" size="14px"></ng-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="tags">
+    <ul class="tags__list">
+      <li class="tags__item" *ngFor="let tag of solution.tags">
+        <p>{{ tag }}</p>
+      </li>
+    </ul>
+  </div>
+
+  <div class="date">
+    <p class="date__text">{{ solution.created_on.slice(0, 10) }}</p>
+  </div>
+
+  <div class="link">
+    <a class="link__btn" href="{{ solution.link }}" noopener noreferrer
+      >Open the problem<ng-icon
+        class="icon__delete"
+        name="featherExternalLink"
+        size="14px"
+      ></ng-icon
+    ></a>
+  </div>
+
+  <form (ngSubmit)="updateSolution()">
+    <div class="solution user-solution">
+      <label for="my_solution" *ngIf="isUserSolution">Your Solution</label>
+      <label for="my_solution" *ngIf="!isUserSolution">Solution</label>
+      <textarea
+        class="solution__text"
+        name="my_solution"
+        id="my_solution"
+        cols="30"
+        rows="17"
+        [attr.disabled]="isEditMode ? null : ''"
+        >{{ solution.my_solution }}</textarea
+      >
+    </div>
+
+    <div class="solution perfect-solution" *ngIf="isUserSolution">
+      <label for="perfect_solution">Perfect Solution</label>
+      <textarea
+        class="solution__text"
+        name="perfect_solution"
+        id="perfect_solution"
+        cols="30"
+        rows="17"
+        [attr.disabled]="isEditMode ? null : ''"
+        >{{ solution.perfect_solution }}</textarea
+      >
+    </div>
+  </form>
+</main>
