@@ -1,0 +1,76 @@
+<main>
+  <div class="heading">
+    <h2 class="heading__text">Add a new solution</h2>
+  </div>
+
+  <form class="solution__form" (ngSubmit)="addSolution()" #userForm="ngForm">
+    <div class="problem__title form__section">
+      <label for="title">Problem Title</label>
+      <input
+        #title
+        [(ngModel)]="newSolution.title"
+        type="text"
+        name="title"
+        id="title"
+        placeholder="Enter title"
+        required
+      />
+    </div>
+    <div class="problem__link form__section">
+      <label for="link">Problem Link</label>
+      <input
+        #link
+        [(ngModel)]="newSolution.link"
+        type="url"
+        name="link"
+        id="link"
+        placeholder="Enter Link"
+        required
+      />
+    </div>
+    <div class="problem__tags form__section">
+      <label for="tags">Tags (optional)</label>
+      <input
+        [(ngModel)]="newSolution.tags"
+        #tags
+        type="text"
+        name="tags"
+        id="tags"
+        placeholder="Enter tags (tag1,tag2)"
+      />
+    </div>
+    <div class="problem__mySolution form__section">
+      <label for="mySolution">Your Solution</label>
+      <textarea
+        #mySolution
+        [(ngModel)]="newSolution.mySolution"
+        name="mySolution"
+        id="mySolution"
+        cols="30"
+        rows="6"
+        placeholder="Enter your code here"
+        required
+      ></textarea>
+    </div>
+    <div class="problem__perfectSolution form__section">
+      <label for="perfectSolution">Perfect Solution</label>
+      <textarea
+        #perfectSolution
+        [(ngModel)]="newSolution.perfectSolution"
+        name="perfectSolution"
+        id="perfectSolution"
+        cols="30"
+        rows="6"
+        placeholder="Enter perfect solution here"
+      ></textarea>
+    </div>
+    <button type="submit" class="form__btn">
+      <p>Submit</p>
+      <ng-icon
+        class="icon__checkmark"
+        name="featherCheckCircle"
+        size="14px"
+      ></ng-icon>
+    </button>
+  </form>
+</main>
