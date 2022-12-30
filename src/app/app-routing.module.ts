@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'error', component: ErrorPageComponent },
   { path: 'profile/:email', component: ProfileComponent },
+  { path: 'settings', component: EditProfileComponent },
   { path: 'add-solution', component: AddSolutionComponent },
 ];
 
