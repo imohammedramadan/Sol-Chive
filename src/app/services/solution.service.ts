@@ -43,7 +43,6 @@ export class SolutionService {
 
   getOneUserSolution(solutionId: string): Observable<Solution> {
     const url = `${this.userApiUrl}/solutions/${solutionId}`;
-    console.log(url);
     return this.http.get<Solution>(url, httpOptions);
   }
 
