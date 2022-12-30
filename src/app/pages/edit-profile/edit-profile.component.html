@@ -1,4 +1,16 @@
-<main>
+<main *ngIf="loggedInUser">
+  <div
+    class="request-msg"
+    *ngIf="requestFailed || requestSucceeded"
+    [ngClass]="{ fail: requestFailed }"
+  >
+    <p *ngIf="requestSucceeded" class="request-msg--green">
+      Information updated Successfully
+    </p>
+    <p *ngIf="requestFailed" class="request-msg--red">
+      Failed to update information, please try again later
+    </p>
+  </div>
   <div class="heading">
     <h2 class="heading__text">Edit Information</h2>
   </div>
@@ -6,13 +18,13 @@
   <div class="card">
     <img
       class="card__img"
-      src="{{ user.picture }}"
+      src="{{ loggedInUser.picture }}"
       alt=""
       width="70px"
       height="70px"
     />
 
-    <button class="card__btn" type="button">
+    <button class="card__btn" type="button" (click)="updateAvatar()">
       <p class="btn__text">Load new avatar</p>
       <ng-icon
         class="icon__refresh"
@@ -23,10 +35,16 @@
   </div>
 
   <div class="info">
-    <form class="info__form">
+    <!-- #userForm="ngForm" -->
+    <form
+      class="info__form"
+      (ngSubmit)="updateProfile(userForm)"
+      #userForm="ngForm"
+    >
       <div class="form__name form__section">
         <label for="name">Display Name</label>
         <input
+          [(ngModel)]="loggedInUser.name"
           type="text"
           name="name"
           id="name"
@@ -37,16 +55,17 @@
       <div class="form__email form__section">
         <label for="email">Email</label>
         <input
+          [(ngModel)]="loggedInUser.email"
           type="email"
           name="email"
           id="email"
-          placeholder="Enter your email"
-          required
+          disabled=""
         />
       </div>
       <div class="form__about form__section">
         <label for="about">About</label>
         <textarea
+          [(ngModel)]="loggedInUser.about"
           name="about"
           id="about"
           cols="30"
@@ -57,6 +76,7 @@
       <div class="form__contacts form__section">
         <label for="contacts">Contacts</label>
         <textarea
+          [(ngModel)]="loggedInUser.contacts"
           name="contacts"
           id="contacts"
           cols="30"

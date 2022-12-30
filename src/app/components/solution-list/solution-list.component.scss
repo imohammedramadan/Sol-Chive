@@ -120,9 +120,9 @@
 }
 
 .solution__delete {
-  color: var(--error-text-color);
+  color: var(--error-color);
   &:hover {
-    background-color: var(--error-text-color);
+    background-color: var(--error-color);
     color: var(--text-color-dark);
   }
 }

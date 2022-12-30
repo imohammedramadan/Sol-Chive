@@ -29,21 +29,19 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getUserData('madrasy101@gmail.com');
-    this.getSolutions('madrasy101@gmail.com');
+    this.getUserData();
+    this.getSolutions();
   }
 
-  getUserData(userEmail: any) {
-    this.userService.getAnonUserData(userEmail).subscribe((user) => {
+  getUserData() {
+    this.userService.getUserProfileData().subscribe((user) => {
       this.user = user;
     });
   }
 
-  getSolutions(userEmail: string) {
-    this.solutionService
-      .getAnonSolutions(userEmail)
-      .subscribe((solutionObject) => {
-        this.solutions = solutionObject.solutions;
-      });
+  getSolutions() {
+    this.solutionService.getUserSolutions().subscribe((solutionObject) => {
+      this.solutions = solutionObject.solutions;
+    });
   }
 }

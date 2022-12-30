@@ -4,6 +4,7 @@
     <app-no-solutions *ngIf="!solutions[0]"></app-no-solutions>
     <app-solution-list
       [solutions]="solutions"
+      [userEmail]="user.email"
       *ngIf="solutions[0]"
     ></app-solution-list>
   </div>

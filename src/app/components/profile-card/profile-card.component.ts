@@ -1,5 +1,4 @@
-import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { User } from 'src/app/interfaces/user';
 
@@ -11,6 +10,8 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./profile-card.component.scss'],
 })
 export class ProfileCardComponent implements OnInit {
+  @Input() isLoggedIn: boolean = false;
+
   user: User = {
     name: '',
     picture: '',

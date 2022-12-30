@@ -16,7 +16,9 @@
         <p>{{ solution.created_on.slice(0, 10) }}</p>
       </div>
       <div class="info__btn">
-        <a><p>View</p></a>
+        <a routerLink="/solution/{{ userEmail }}/{{ solution.solution_id }}"
+          ><p>View</p></a
+        >
       </div>
     </div>
 

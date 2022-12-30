@@ -1,4 +1,3 @@
-import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -13,10 +12,10 @@ import { SolutionService } from './../../services/solution.service';
 })
 export class ProfileComponent implements OnInit {
   solutions: Solution[] = [];
+  userEmail: string = this.route.snapshot.paramMap.get('email')!;
 
   constructor(
     private route: ActivatedRoute,
-    private location: Location,
     private solutionService: SolutionService
   ) {}
 

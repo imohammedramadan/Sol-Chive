@@ -24,6 +24,7 @@
   height: 27px;
   padding: 0px 8px;
   font-size: 12px;
+  color: var(--text-color-primary);
 
   &::placeholder {
     color: var(--text-color-primary-disabled);

@@ -6,6 +6,22 @@ main {
   gap: 20px;
 }
 
+.request-msg {
+  padding: 4px 20px;
+  border-radius: 6px;
+  background-color: var(--pass-background-color);
+  &--green {
+    color: var(--pass-text-color);
+  }
+  &--red {
+    color: var(--error-color);
+  }
+}
+
+.fail {
+  background-color: var(--error-color-dark);
+}
+
 button {
   background-color: var(--orange-100);
   border-radius: 6px;
@@ -99,9 +115,7 @@ textarea {
 }
 
 @media (max-width: 768px) {
-  .solutions__list {
-    grid-template-columns: repeat(1, minmax(250px, 426px));
-  }
+  //
 }
 @media (max-width: 576px) {
   .card {
