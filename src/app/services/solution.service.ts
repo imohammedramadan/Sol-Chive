@@ -9,6 +9,7 @@ const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
   }),
+  withCredentials: true,
 };
 
 @Injectable({
@@ -25,33 +26,34 @@ export class SolutionService {
     return this.http.get<AllSolutions>(url);
   }
 
-  getOneAnonSolution(solutionId: number): Observable<Solution> {
+  getOneAnonSolution(solutionId: string): Observable<Solution> {
     const url = `${this.anonApiUrl}/solution/${solutionId}`;
     return this.http.get<Solution>(url);
   }
 
-  getUserSolutions(): Observable<Solution> {
+  getUserSolutions(): Observable<AllSolutions> {
     const url = `${this.userApiUrl}/solutions`;
-    return this.http.get<Solution>(url);
+    return this.http.get<AllSolutions>(url, httpOptions);
   }
 
   addUserSolution(solution: AddSolution) {
     const url = `${this.userApiUrl}/solutions`;
-    return this.http.post<AddSolution>(url, solution);
+    return this.http.post<AddSolution>(url, solution, httpOptions);
   }
 
-  getOneUserSolution(solutionId: number): Observable<Solution> {
+  getOneUserSolution(solutionId: string): Observable<Solution> {
     const url = `${this.userApiUrl}/solutions/${solutionId}`;
-    return this.http.get<Solution>(url);
+    console.log(url);
+    return this.http.get<Solution>(url, httpOptions);
   }
 
   deleteUserSolution(solutionId: number) {
     const url = `${this.userApiUrl}/solutions/${solutionId}`;
-    return this.http.delete<Solution>(url);
+    return this.http.delete<Solution>(url, httpOptions);
   }
 
   updateUserSolution(solutionId: number, solution: Solution) {
     const url = `${this.userApiUrl}/solutions/${solutionId}`;
-    return this.http.put<Solution>(url, solution);
+    return this.http.put<Solution>(url, solution, httpOptions);
   }
 }

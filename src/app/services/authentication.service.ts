@@ -7,6 +7,7 @@ const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
   }),
+  withCredentials: true,
 };
 
 @Injectable({
@@ -23,6 +24,6 @@ export class AuthenticationService {
 
   logout(): Observable<any> {
     const url = `${this.apiUrl}logout`;
-    return this.http.delete<any>(url);
+    return this.http.delete<any>(url, httpOptions);
   }
 }
