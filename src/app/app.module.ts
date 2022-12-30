@@ -47,7 +47,7 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
-import { CookieService } from 'ngx-cookie-service';
+import { MyProfileComponent } from './pages/my-profile/my-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,6 +63,7 @@ import { CookieService } from 'ngx-cookie-service';
     ProfileCardComponent,
     AddSolutionBtnComponent,
     EditProfileComponent,
+    MyProfileComponent,
   ],
 
   imports: [
