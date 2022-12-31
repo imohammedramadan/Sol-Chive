@@ -3,6 +3,7 @@
 //TODO Home Empty
 //TODO View Solution
 //TODO Home Error
+//TODO Header Search Error msg
 
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -42,13 +43,13 @@ import { NoSolutionsComponent } from './components/no-solutions/no-solutions.com
 import { ProfileCardComponent } from './components/profile-card/profile-card.component';
 import { SearchComponent } from './components/search/search.component';
 import { SolutionListComponent } from './components/solution-list/solution-list.component';
+import { AddSolutionComponent } from './pages/add-solution/add-solution.component';
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
-import { ProfileComponent } from './pages/profile/profile.component';
 import { MyProfileComponent } from './pages/my-profile/my-profile.component';
-import { AddSolutionComponent } from './pages/add-solution/add-solution.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 import { SolutionComponent } from './pages/solution/solution.component';
 
 @NgModule({

@@ -11,6 +11,7 @@ import { UserService } from 'src/app/services/user.service';
 export class MyProfileComponent implements OnInit {
   solutions: Solution[] = [];
   userEmail: string = '';
+
   constructor(
     private solutionService: SolutionService,
     private userService: UserService

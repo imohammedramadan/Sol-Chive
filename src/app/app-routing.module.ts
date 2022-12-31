@@ -8,6 +8,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
 import { AddSolutionComponent } from './pages/add-solution/add-solution.component';
 import { SolutionComponent } from './pages/solution/solution.component';
+import { MyProfileComponent } from './pages/my-profile/my-profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'error', component: ErrorPageComponent },
   { path: 'profile/:email', component: ProfileComponent },
+  { path: 'my-profile', component: MyProfileComponent },
   { path: 'settings', component: EditProfileComponent },
   { path: 'add-solution', component: AddSolutionComponent },
   { path: 'solution/:email/:id', component: SolutionComponent },

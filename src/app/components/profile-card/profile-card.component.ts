@@ -11,6 +11,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class ProfileCardComponent implements OnInit {
   @Input() isLoggedIn: boolean = false;
+  @Input() userEmail: string = '';
 
   user: User = {
     name: '',
@@ -28,12 +29,20 @@ export class ProfileCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUserData();
+    console.log(this.userEmail);
   }
 
   getUserData() {
     const email: string = this.route.snapshot.paramMap.get('email')!;
-    this.userService.getAnonUserData(email).subscribe((user) => {
-      this.user = user;
-    });
+
+    if (!email) {
+      this.userService.getUserProfileData().subscribe((data) => {
+        this.user = data;
+      });
+    } else {
+      this.userService.getAnonUserData(email).subscribe((user) => {
+        this.user = user;
+      });
+    }
   }
 }

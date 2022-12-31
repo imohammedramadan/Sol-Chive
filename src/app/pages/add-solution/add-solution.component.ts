@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AddSolution } from 'src/app/interfaces/add-solution';
 import { SolutionService } from 'src/app/services/solution.service';
 
 @Component({

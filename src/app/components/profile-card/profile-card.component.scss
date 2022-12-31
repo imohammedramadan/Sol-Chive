@@ -1,6 +1,5 @@
 .card {
   background-color: var(--background-color-secondary);
-  max-width: 240px;
   padding: 40px 15px 15px;
   border-radius: 9px;
   display: flex;
@@ -11,7 +10,7 @@
     display: flex;
     place-content: center;
     position: absolute;
-    bottom: 236px;
+    bottom: 88%;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -56,10 +55,14 @@
 .about__text {
   font-size: 12px;
   color: var(--text-color-secondary);
+  max-width: 240px;
 }
 
 .contacts__text,
 .problems__text {
   font-size: 12px;
   color: var(--text-color-secondary);
+}
+
+@media (max-width: 576px) {
 }
