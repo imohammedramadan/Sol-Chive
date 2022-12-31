@@ -1,4 +1,9 @@
 <main>
+  <div class="error" *ngIf="isSearchError">
+    <p class="error__text">
+      Sorry, the user you searched for was not found, try again
+    </p>
+  </div>
   <div class="hero">
     <div class="greeting">
       <h1>Welcome</h1>
@@ -6,32 +11,28 @@
     <div class="join">
       <h2 class="join__title">Login or Join us via</h2>
       <ul class="join__list">
-        <li class="join__item">
-          <button type="button" class="join__btn facebook__btn">
+        <!-- <li class="join__item">
+          <a class="join__btn facebook__btn">
             <p class="sr-only">Facebook</p>
             <ng-icon
               class="icon__facebook btn__icon"
               name="featherFacebook"
               size="35px"
             ></ng-icon>
-          </button>
-        </li>
-        <li class="join__item">
-          <button type="button" class="join__btn github__btn">
+          </a>
+        </li> -->
+        <!-- <li class="join__item">
+          <a class="join__btn github__btn">
             <p class="sr-only">Github</p>
             <ng-icon
               class="icon__github btn__icon"
               name="featherGithub"
               size="35px"
             ></ng-icon>
-          </button>
-        </li>
+          </a>
+        </li> -->
         <li class="join__item">
-          <a
-            type="button"
-            class="join__btn google__btn"
-            href="{{ googleLoginUrl }}"
-          >
+          <a class="join__btn google__btn" href="{{ googleLoginUrl }}">
             <p class="sr-only">Google</p>
             <ng-icon
               class="icon__google btn__icon"
@@ -40,16 +41,16 @@
             ></ng-icon>
           </a>
         </li>
-        <li class="join__item">
-          <button type="button" class="join__btn twitter__btn">
+        <!-- <li class="join__item">
+          <a class="join__btn twitter__btn">
             <p class="sr-only">Twitter</p>
             <ng-icon
               class="icon__twitter btn__icon"
               name="featherTwitter"
               size="35px"
             ></ng-icon>
-          </button>
-        </li>
+          </a>
+        </li> -->
       </ul>
     </div>
     <div class="separator">
@@ -58,15 +59,17 @@
       <div class="separator__line"></div>
     </div>
     <div class="search">
-      <form class="search__form">
+      <form class="search__form" (ngSubmit)="findUser()">
         <label for="search">Find another user:</label>
         <div class="search__field">
           <input
+            [(ngModel)]="searchEmail"
             type="email"
             name="search"
             id="search"
             placeholder="Enter email"
             class="search__input"
+            (input)="handleErrorDisplay(false)"
             required
           />
           <div class="search__icon">

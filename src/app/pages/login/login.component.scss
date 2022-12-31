@@ -1,8 +1,23 @@
 main {
-  min-height: calc(100vh - (53px + 78px));
+  min-height: calc(100vh - (53px + 70px));
   display: flex;
   place-content: center;
   place-items: center;
+  flex-direction: column;
+}
+
+.error {
+  margin: 0px 16px;
+  position: absolute;
+  top: 170px;
+  text-align: center;
+  background-color: var(--error-color-dark);
+  padding: 7px 14px;
+  border-radius: 6px;
+
+  &__text {
+    color: var(--error-color);
+  }
 }
 
 .hero {
@@ -39,6 +54,9 @@ main {
     height: 71px;
     border-radius: 9px;
     cursor: pointer;
+    display: flex;
+    place-content: center;
+    place-items: center;
 
     .btn__icon {
       color: var(--text-color-primary);
@@ -138,7 +156,6 @@ main {
 @media (max-width: 576px) {
   .join__list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
   }
 
   .search__input {

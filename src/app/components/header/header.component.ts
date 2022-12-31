@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 import { User } from 'src/app/interfaces/user';
 import { AuthenticationService } from 'src/app/services/authentication.service';
@@ -12,9 +13,9 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  @Input() isEmptyHeader: boolean = false;
-  @Input() isLoggedIn: boolean = false;
-  @Input() mail: string = '';
+  isEmptyHeader: boolean = false;
+  isLoggedIn: boolean = false;
+  mail: string = '';
   user: User = {
     name: '',
     picture: '',
@@ -23,35 +24,50 @@ export class HeaderComponent implements OnInit {
     contacts: '',
     problem_count: 0,
   };
-
   isUserMenuOpen: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private userService: UserService,
-    private authService: AuthenticationService
+    private authService: AuthenticationService,
+    private cookieService: CookieService,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
     this.getUserData();
+    this.getUserAuthStatus();
+    this.setHeaderType();
   }
 
   activateMenu() {
     this.isUserMenuOpen = !this.isUserMenuOpen;
   }
 
-  getUserData() {
-    let email: string = this.route.snapshot.paramMap.get('email')!;
-    if (!email) {
-      email = this.mail;
-    }
+  getUserAuthStatus() {
+    const isLoggedIn = this.cookieService.get('isLoggedIn');
 
-    this.userService.getAnonUserData(email).subscribe((user) => {
+    if (isLoggedIn === 'true') this.isLoggedIn = true;
+    if (isLoggedIn === 'false') this.isLoggedIn = false;
+  }
+
+  getUserData() {
+    this.userService.getUserProfileData().subscribe((user) => {
       this.user = user;
     });
   }
 
   logout() {
     this.authService.logout();
+  }
+
+  setHeaderType() {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        if (event.url === '/login') this.isEmptyHeader = true;
+        else this.isEmptyHeader = false;
+      }
+    });
   }
 }

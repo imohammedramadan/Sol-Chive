@@ -1,11 +1,12 @@
-<form class="search__form">
-  <label for="search">Find another user:</label>
+<form class="search__form" (ngSubmit)="findUser()">
+  <label for="search" class="sr-only">Find user by Email:</label>
   <div class="search__field">
     <input
+      [(ngModel)]="searchEmail"
       type="email"
       name="search"
       id="search"
-      placeholder="Enter email"
+      placeholder="Find user by Email"
       class="search__input"
       required
     />
@@ -23,7 +24,7 @@
   </div>
 </form>
 
-<form class="search__form--compact">
+<form class="search__form--compact" (ngSubmit)="findUser()">
   <div class="activate__btn">
     <button type="button" (click)="openSearchMenu()">
       <p class="sr-only">Open Search</p>
@@ -39,6 +40,7 @@
     <label for="search--compact">Find another user:</label>
     <div class="search__field">
       <input
+        [(ngModel)]="searchEmail"
         type="email"
         name="search"
         id="search--compact"
@@ -60,3 +62,9 @@
     </div>
   </div>
 </form>
+
+<div class="error" *ngIf="isSearchError">
+  <p class="error__text">
+    Sorry, the user you searched for was not found, try again
+  </p>
+</div>
