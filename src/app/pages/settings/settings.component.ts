@@ -5,11 +5,11 @@ import { User } from 'src/app/interfaces/user';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
-  selector: 'app-edit-profile',
-  templateUrl: './edit-profile.component.html',
-  styleUrls: ['./edit-profile.component.scss'],
+  selector: 'app-settings',
+  templateUrl: './settings.component.html',
+  styleUrls: ['./settings.component.scss'],
 })
-export class EditProfileComponent {
+export class SettingsComponent {
   loggedInUser: any;
   requestFailed: boolean = false;
   requestSucceeded: boolean = false;

@@ -45,7 +45,7 @@ import { ProfileCardComponent } from './components/profile-card/profile-card.com
 import { SearchComponent } from './components/search/search.component';
 import { SolutionListComponent } from './components/solution-list/solution-list.component';
 import { AddSolutionComponent } from './pages/add-solution/add-solution.component';
-import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
+import { SettingsComponent } from './pages/settings/settings.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -67,7 +67,7 @@ import { SolutionComponent } from './pages/solution/solution.component';
     SearchResultComponent,
     ProfileCardComponent,
     AddSolutionBtnComponent,
-    EditProfileComponent,
+    SettingsComponent,
     AddSolutionComponent,
     ProfileComponent,
     SolutionComponent,
