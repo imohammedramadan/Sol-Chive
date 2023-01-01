@@ -1,9 +1,10 @@
-import { Solution } from '../../interfaces/solution';
-import { SolutionService } from './../../services/solution.service';
-import { Component } from '@angular/core';
-import { OnInit } from '@angular/core';
-import { User } from 'src/app/interfaces/user';
+import { Component, OnInit } from '@angular/core';
+
+import { SolutionService } from 'src/app/services/solution.service';
 import { UserService } from 'src/app/services/user.service';
+
+import { Solution } from 'src/app/interfaces/solution';
+import { User } from 'src/app/interfaces/user';
 
 @Component({
   selector: 'app-home',

@@ -51,7 +51,6 @@ button {
   gap: 20px;
   border-radius: 9px;
   flex-wrap: wrap;
-  // width: 16vw;
 
   &__img {
     border-radius: 100px;
@@ -113,9 +112,6 @@ textarea {
   }
 }
 
-@media (max-width: 768px) {
-  //
-}
 @media (max-width: 576px) {
   .card {
     width: 90vw;

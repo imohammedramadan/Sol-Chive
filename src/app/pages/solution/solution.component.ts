@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Solution } from 'src/app/interfaces/solution';
+
 import { SolutionService } from 'src/app/services/solution.service';
 import { UserService } from 'src/app/services/user.service';
+
+import { Solution } from 'src/app/interfaces/solution';
 
 @Component({
   selector: 'app-solution',

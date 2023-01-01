@@ -1,9 +1,11 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import { Observable } from 'rxjs';
-import { AddSolution } from '../interfaces/add-solution';
-import { AllSolutions } from '../interfaces/all-solutions';
-import { Solution } from '../interfaces/solution';
+
+import { AddSolution } from 'src/app/interfaces/add-solution';
+import { AllSolutions } from 'src/app/interfaces/all-solutions';
+import { Solution } from 'src/app/interfaces/solution';
 
 const httpOptions = {
   headers: new HttpHeaders({

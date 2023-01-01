@@ -1,9 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
-import { User } from 'src/app/interfaces/user';
+
 import { SolutionService } from 'src/app/services/solution.service';
 import { UserService } from 'src/app/services/user.service';
-import { Solution } from '../../interfaces/solution';
+
+import { Solution } from 'src/app/interfaces/solution';
+import { User } from 'src/app/interfaces/user';
 
 @Component({
   selector: 'app-solution-list',
