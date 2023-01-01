@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { User } from 'src/app/interfaces/user';
 
 import { UserService } from 'src/app/services/user.service';
+
+import { User } from 'src/app/interfaces/user';
 
 @Component({
   selector: 'app-profile-card',

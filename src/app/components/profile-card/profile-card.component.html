@@ -1,6 +1,5 @@
 <aside class="card">
   <div class="card__avatar">
-    <!-- <img class="avatar__img" src="{{ user.picture }}" alt="" /> -->
     <img
       class="avatar__img"
       src="{{ user.picture }}"
@@ -8,9 +7,11 @@
       onerror="this.src = '../../../assets/defaultUserPicture.svg'"
     />
   </div>
+
   <h3 class="card__name">{{ user.name }}</h3>
+
   <p class="card__email">{{ user.email }}</p>
-  <!-- <div class="card__about" *ngIf="user.about"> -->
+
   <div class="card__about">
     <h4 class="about__title">About</h4>
     <p class="about__text" *ngIf="user.about">

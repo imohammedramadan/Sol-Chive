@@ -23,7 +23,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    // align-items: space-between;
     align-items: flex-start;
     gap: 34px;
   }
@@ -127,15 +126,8 @@
   }
 }
 
-@media (max-width: 992px) {
-  // .solutions__list {
-}
-
 @media (max-width: 768px) {
   .solutions__list {
     grid-template-columns: repeat(1, minmax(250px, 426px));
   }
-}
-@media (max-width: 576px) {
-  // .solutions__list {
 }

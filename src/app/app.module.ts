@@ -1,15 +1,15 @@
 //!use moment (date-fns alternative) for date handling in solution & solution-list
-//TODO Search Result(no result) (rename profile to search result and my profile to profile)
-//TODO View Solution
 //TODO Home Error
-//TODO Header Search Error msg
 
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
+
 import { JwtModule } from '@auth0/angular-jwt';
 import { NgIconsModule } from '@ng-icons/core';
-import { AppRoutingModule } from './app-routing.module';
+import { CookieService } from 'ngx-cookie-service';
 // import { JWT_OPTIONS } from '@auth0/angular-jwt';
 
 import {
@@ -33,10 +33,17 @@ import {
   featherXCircle,
 } from '@ng-icons/feather-icons';
 
-import { FormsModule } from '@angular/forms';
-import { CookieService } from 'ngx-cookie-service';
-
 import { AppComponent } from './app.component';
+
+import { AddSolutionComponent } from './pages/add-solution/add-solution.component';
+import { ErrorPageComponent } from './pages/error-page/error-page.component';
+import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { SearchResultComponent } from './pages/search-result/search-result.component';
+import { SettingsComponent } from './pages/settings/settings.component';
+import { SolutionComponent } from './pages/solution/solution.component';
+
 import { AddSolutionBtnComponent } from './components/add-solution-btn/add-solution-btn.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -44,14 +51,6 @@ import { NoSolutionsComponent } from './components/no-solutions/no-solutions.com
 import { ProfileCardComponent } from './components/profile-card/profile-card.component';
 import { SearchComponent } from './components/search/search.component';
 import { SolutionListComponent } from './components/solution-list/solution-list.component';
-import { AddSolutionComponent } from './pages/add-solution/add-solution.component';
-import { SettingsComponent } from './pages/settings/settings.component';
-import { ErrorPageComponent } from './pages/error-page/error-page.component';
-import { HomeComponent } from './pages/home/home.component';
-import { LoginComponent } from './pages/login/login.component';
-import { ProfileComponent } from './pages/profile/profile.component';
-import { SearchResultComponent } from './pages/search-result/search-result.component';
-import { SolutionComponent } from './pages/solution/solution.component';
 
 @NgModule({
   declarations: [
@@ -80,24 +79,24 @@ import { SolutionComponent } from './pages/solution/solution.component';
     FormsModule,
     JwtModule,
     NgIconsModule.withIcons({
-      featherHome,
-      featherLogOut,
-      featherSearch,
-      featherExternalLink,
-      featherCopy,
-      featherEdit,
+      featherCheckCircle,
       featherChevronDown,
       featherChevronUp,
-      featherCheckCircle,
-      featherXCircle,
-      featherRefreshCcw,
-      featherPlusCircle,
-      featherGithub,
-      featherFacebook,
-      featherTwitter,
       featherChrome,
-      featherTrash,
+      featherCopy,
+      featherEdit,
+      featherExternalLink,
+      featherFacebook,
+      featherGithub,
+      featherHome,
+      featherLogOut,
       featherMenu,
+      featherPlusCircle,
+      featherRefreshCcw,
+      featherSearch,
+      featherTrash,
+      featherTwitter,
+      featherXCircle,
     }),
   ],
   providers: [CookieService],

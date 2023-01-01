@@ -1,9 +1,11 @@
-import { User } from '../interfaces/user';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import { Observable } from 'rxjs';
-import { UserAvatar } from '../interfaces/user-avatar';
-import { UserSettings } from '../interfaces/user-settings';
+
+import { UserAvatar } from 'src/app/interfaces/user-avatar';
+import { UserSettings } from 'src/app/interfaces/user-settings';
+import { User } from 'src/app/interfaces/user';
 
 const httpOptions = {
   headers: new HttpHeaders({

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { Solution } from '../../interfaces/solution';
+import { SolutionService } from 'src/app/services/solution.service';
 
-import { SolutionService } from '../../services/solution.service';
+import { Solution } from 'src/app/interfaces/solution';
 
 @Component({
   selector: 'app-profile',

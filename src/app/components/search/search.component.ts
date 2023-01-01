@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 
 import { CookieService } from 'ngx-cookie-service';
+
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -28,8 +29,6 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-
-  // getLoggedInUserEmail() {}
 
   findUser() {
     //get logged in user email if its empty
