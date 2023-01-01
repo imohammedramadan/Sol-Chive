@@ -38,7 +38,11 @@
         </button>
       </div>
       <div class="controls__bottom">
-        <button type="button" class="solution__delete">
+        <button
+          type="button"
+          class="solution__delete"
+          (click)="deleteSolution(solution.solution_id)"
+        >
           <p class="sr-only">Delete</p>
           <ng-icon
             class="icon__delete"
