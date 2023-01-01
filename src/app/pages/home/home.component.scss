@@ -2,6 +2,14 @@ main {
   min-height: calc(100vh - (53px + 51px));
 }
 
+.btn {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  margin: 0 auto;
+  max-width: 70vw;
+}
+
 .solutions {
-  padding: 52px 15px;
+  padding: 24px 15px;
 }

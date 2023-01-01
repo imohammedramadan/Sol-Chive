@@ -1,4 +1,7 @@
 <main>
+  <div class="btn">
+    <app-add-solution-btn *ngIf="solutions[0]"></app-add-solution-btn>
+  </div>
   <div class="solutions">
     <app-no-solutions *ngIf="!solutions[0]"></app-no-solutions>
     <app-solution-list
