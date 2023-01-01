@@ -1,6 +1,5 @@
 //!use moment (date-fns alternative) for date handling in solution & solution-list
 //TODO Search Result(no result) (rename profile to search result and my profile to profile)
-//TODO Home Empty
 //TODO View Solution
 //TODO Home Error
 //TODO Header Search Error msg
@@ -8,8 +7,10 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { JwtModule } from '@auth0/angular-jwt';
 import { NgIconsModule } from '@ng-icons/core';
 import { AppRoutingModule } from './app-routing.module';
+// import { JWT_OPTIONS } from '@auth0/angular-jwt';
 
 import {
   featherCheckCircle,
@@ -48,8 +49,8 @@ import { EditProfileComponent } from './pages/edit-profile/edit-profile.componen
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
-import { MyProfileComponent } from './pages/my-profile/my-profile.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { SearchResultComponent } from './pages/search-result/search-result.component';
 import { SolutionComponent } from './pages/solution/solution.component';
 
 @NgModule({
@@ -63,12 +64,12 @@ import { SolutionComponent } from './pages/solution/solution.component';
     SolutionListComponent,
     NoSolutionsComponent,
     ErrorPageComponent,
-    ProfileComponent,
+    SearchResultComponent,
     ProfileCardComponent,
     AddSolutionBtnComponent,
     EditProfileComponent,
     AddSolutionComponent,
-    MyProfileComponent,
+    ProfileComponent,
     SolutionComponent,
   ],
 
@@ -77,6 +78,7 @@ import { SolutionComponent } from './pages/solution/solution.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    JwtModule,
     NgIconsModule.withIcons({
       featherHome,
       featherLogOut,

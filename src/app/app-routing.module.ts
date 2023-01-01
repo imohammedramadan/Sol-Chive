@@ -4,19 +4,19 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
-import { ProfileComponent } from './pages/profile/profile.component';
+import { SearchResultComponent } from './pages/search-result/search-result.component';
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
 import { AddSolutionComponent } from './pages/add-solution/add-solution.component';
 import { SolutionComponent } from './pages/solution/solution.component';
-import { MyProfileComponent } from './pages/my-profile/my-profile.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'error', component: ErrorPageComponent },
-  { path: 'profile/:email', component: ProfileComponent },
-  { path: 'my-profile', component: MyProfileComponent },
+  { path: 'search-result/:email', component: SearchResultComponent },
+  { path: 'profile', component: ProfileComponent },
   { path: 'settings', component: EditProfileComponent },
   { path: 'add-solution', component: AddSolutionComponent },
   { path: 'solution/:email/:id', component: SolutionComponent },

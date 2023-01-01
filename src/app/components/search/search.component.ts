@@ -44,7 +44,7 @@ export class SearchComponent implements OnInit {
       //check if logged in user is searching for himself/herself
       if (this.LoggedInUserEmail === this.searchEmail) {
         //if user is searching for himself/herself route to his/her profile
-        this.router.navigateByUrl('/my-profile');
+        this.router.navigateByUrl('/profile');
       } else {
         //if user not searching for himself/herself route to searched profile
         this.userService.getAnonUserData(this.searchEmail).subscribe({
@@ -52,7 +52,7 @@ export class SearchComponent implements OnInit {
             this.router
               .navigateByUrl('/', { skipLocationChange: true })
               .then(() => {
-                this.router.navigateByUrl(`/profile/${this.searchEmail}`);
+                this.router.navigateByUrl(`/search-result/${this.searchEmail}`);
                 this.closeSearchOnRouteChange();
               });
           },

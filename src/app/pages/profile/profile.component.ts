@@ -1,33 +1,36 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-
-import { Solution } from '../../interfaces/solution';
-
-import { SolutionService } from './../../services/solution.service';
+import { Solution } from 'src/app/interfaces/solution';
+import { SolutionService } from 'src/app/services/solution.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
-  selector: 'app-profile',
+  selector: 'app-my-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent implements OnInit {
   solutions: Solution[] = [];
-  userEmail: string = this.route.snapshot.paramMap.get('email')!;
+  userEmail: string = '';
 
   constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private solutionService: SolutionService
+    private solutionService: SolutionService,
+    private userService: UserService
   ) {}
 
   ngOnInit(): void {
     this.getSolutions();
+    this.getLoggedInUserData();
   }
 
   getSolutions() {
-    const email: string = this.route.snapshot.paramMap.get('email')!;
-    this.solutionService.getAnonSolutions(email).subscribe((SolutionObject) => {
+    this.solutionService.getUserSolutions().subscribe((SolutionObject) => {
       this.solutions = SolutionObject.solutions;
+    });
+  }
+
+  getLoggedInUserData() {
+    this.userService.getUserProfileData().subscribe((data) => {
+      this.userEmail = data.email;
     });
   }
 }

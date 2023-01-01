@@ -1,10 +1,14 @@
 <main>
-  <app-profile-card class="profile"></app-profile-card>
+  <app-profile-card
+    class="profile"
+    [isLoggedIn]="true"
+    [userEmail]="userEmail"
+  ></app-profile-card>
   <div class="solutions">
     <app-no-solutions *ngIf="!solutions[0]"></app-no-solutions>
     <app-solution-list
-      [solutions]="solutions"
       [userEmail]="userEmail"
+      [solutions]="solutions"
       *ngIf="solutions[0]"
     ></app-solution-list>
   </div>

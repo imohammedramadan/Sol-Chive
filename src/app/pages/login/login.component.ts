@@ -38,7 +38,8 @@ export class LoginComponent implements OnInit {
 
   findUser() {
     this.userService.getAnonUserData(this.searchEmail).subscribe({
-      next: (res) => this.router.navigateByUrl(`/profile/${this.searchEmail}`),
+      next: (res) =>
+        this.router.navigateByUrl(`/search-result/${this.searchEmail}`),
       error: (err) => this.handleErrorDisplay(true),
     });
   }
