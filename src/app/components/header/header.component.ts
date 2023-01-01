@@ -65,9 +65,14 @@ export class HeaderComponent implements OnInit {
   setHeaderType() {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
+        this.isEmptyHeader = false;
+        this.isUserMenuOpen = false;
         if (event.url === '/login') this.isEmptyHeader = true;
-        else this.isEmptyHeader = false;
       }
     });
+  }
+
+  loadDefaultPicture() {
+    this.user.picture = 'src/assets/defaultUserPicture.svg';
   }
 }

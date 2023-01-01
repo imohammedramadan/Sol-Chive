@@ -1,5 +1,4 @@
 <main>
-  <a routerLink="/profile/{{ user.email }}">{{ user.email }}</a>
   <div class="solutions">
     <app-no-solutions *ngIf="!solutions[0]"></app-no-solutions>
     <app-solution-list

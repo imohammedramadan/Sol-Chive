@@ -1,5 +1,4 @@
 <header [ngClass]="{ centered: isEmptyHeader }">
-  <a routerLink="/error">Error</a>
   <nav class="container">
     <ul class="nav" *ngIf="!isEmptyHeader">
       <li class="nav__item nav__logo">
@@ -43,25 +42,20 @@
             </li>
 
             <li class="user__profile">
-              <a class="user__link">
+              <a class="user__link" routerLink="/my-profile">
                 <div class="user__img">
-                  <!-- <img
+                  <img
                     src="{{ user.picture }}"
                     alt="{{ user.name }}"
                     width="28px"
                     height="28px"
-                  /> -->
-                  <img
-                    src="https://cdn.discordapp.com/attachments/1034581559157739552/1055904317783154838/osamaMammar_superhero__hiro__hamada_hiro_character__sketch_cart_9d00b58f-1e3a-4e7d-9165-c79a287ee17c.png"
-                    alt="{{ user.name }}"
-                    width="28px"
-                    height="28px"
+                    onerror="this.src = '../../../assets/defaultUserPicture.svg'"
                   />
                 </div>
                 <div class="user__name">
-                  <a routerLink="/my-profile"
-                    ><p>{{ user.name }}</p></a
-                  >
+                  <a routerLink="/my-profile">
+                    <p>{{ user.name }}</p>
+                  </a>
                 </div>
               </a>
             </li>

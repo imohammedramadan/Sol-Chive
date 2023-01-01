@@ -3,8 +3,9 @@
     <!-- <img class="avatar__img" src="{{ user.picture }}" alt="" /> -->
     <img
       class="avatar__img"
-      src="https://cdn.discordapp.com/attachments/1034581559157739552/1055904317783154838/osamaMammar_superhero__hiro__hamada_hiro_character__sketch_cart_9d00b58f-1e3a-4e7d-9165-c79a287ee17c.png"
+      src="{{ user.picture }}"
       alt="{{ user.name }}"
+      onerror="this.src = '../../../assets/defaultUserPicture.svg'"
     />
   </div>
   <h3 class="card__name">{{ user.name }}</h3>
