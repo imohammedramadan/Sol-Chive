@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+
 import { CookieService } from 'ngx-cookie-service';
 import { UserService } from 'src/app/services/user.service';
 
@@ -8,7 +9,7 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
 })
-export class SearchComponent {
+export class SearchComponent implements OnInit {
   @Input() isUserMenuOpen: boolean = false;
 
   isSearchMenuOpen: boolean = false;
@@ -26,7 +27,9 @@ export class SearchComponent {
     this.isSearchMenuOpen = !this.isSearchMenuOpen;
   }
 
-  getLoggedInUserEmail() {}
+  ngOnInit(): void {}
+
+  // getLoggedInUserEmail() {}
 
   findUser() {
     //get logged in user email if its empty
@@ -49,7 +52,8 @@ export class SearchComponent {
             this.router
               .navigateByUrl('/', { skipLocationChange: true })
               .then(() => {
-                this.router.navigate([`/profile/${this.searchEmail}`]);
+                this.router.navigateByUrl(`/profile/${this.searchEmail}`);
+                this.closeSearchOnRouteChange();
               });
           },
           error: (err) => this.handleErrorDisplay(true),
@@ -64,5 +68,13 @@ export class SearchComponent {
     } else {
       this.isSearchError = false;
     }
+  }
+
+  closeSearchOnRouteChange() {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.isSearchMenuOpen = false;
+      }
+    });
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { User } from 'src/app/interfaces/user';
 
@@ -29,7 +29,6 @@ export class ProfileCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUserData();
-    console.log(this.userEmail);
   }
 
   getUserData() {
