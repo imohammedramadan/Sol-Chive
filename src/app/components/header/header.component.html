@@ -13,7 +13,7 @@
 
       <li class="nav__item nav__user">
         <div class="nav__user__join" *ngIf="!isLoggedIn">
-          <a><p>Join us or Login</p></a>
+          <a routerLink="/login"><p>Join us or Login</p></a>
         </div>
 
         <div class="nav__user__logged" *ngIf="isLoggedIn">

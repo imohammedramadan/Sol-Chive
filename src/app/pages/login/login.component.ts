@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthenticationService } from 'src/app/services/authentication.service';
 
+import { CookieService } from 'ngx-cookie-service';
+
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -15,20 +17,22 @@ export class LoginComponent implements OnInit {
   searchEmail: string = '';
   constructor(
     private AuthenticationService: AuthenticationService,
-
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    private cookieService: CookieService
   ) {}
   ngOnInit(): void {
     this.googleLogin();
-    // this.findUser('mohammed.ramadan1474@gmail.com');
-    // 'madrasy101s@gmail.com'
-    // this.findUser();
   }
-
+  // this.router.navigateByUrl('/home');
   googleLogin() {
-    this.AuthenticationService.getGoogleLogin().subscribe((googleObject) => {
-      this.googleLoginUrl = googleObject.redirectUrl;
+    this.AuthenticationService.getGoogleLogin().subscribe({
+      next: (googleObject) => (this.googleLoginUrl = googleObject.redirectUrl),
+      complete: () => {
+        if (this.cookieService.get('isLoggedIn') === 'true') {
+          this.router.navigateByUrl('/home');
+        }
+      },
     });
   }
 
