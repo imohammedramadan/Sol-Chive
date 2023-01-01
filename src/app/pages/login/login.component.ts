@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 import { CookieService } from 'ngx-cookie-service';
 
-import { AuthenticationService } from 'src/app/services/authentication.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   isSearchError: boolean = false;
   searchEmail: string = '';
   constructor(
-    private AuthenticationService: AuthenticationService,
+    private authenticationService: AuthService,
     private userService: UserService,
     private router: Router,
     private cookieService: CookieService
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   }
   // this.router.navigateByUrl('/home');
   googleLogin() {
-    this.AuthenticationService.getGoogleLogin().subscribe({
+    this.authenticationService.getGoogleLogin().subscribe({
       next: (googleObject) => (this.googleLoginUrl = googleObject.redirectUrl),
       complete: () => {
         if (this.cookieService.get('isLoggedIn') === 'true') {

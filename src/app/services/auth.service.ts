@@ -13,7 +13,7 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root',
 })
-export class AuthenticationService {
+export class AuthService {
   private apiUrl = 'http://localhost:5000/api/v1/auth/';
   constructor(private http: HttpClient) {}
 
