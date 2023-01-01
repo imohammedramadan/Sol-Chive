@@ -1,27 +1,53 @@
-import { Solution } from '../../interfaces/solution';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
+import { User } from 'src/app/interfaces/user';
 import { SolutionService } from 'src/app/services/solution.service';
-import { findIndex } from 'rxjs';
+import { UserService } from 'src/app/services/user.service';
+import { Solution } from '../../interfaces/solution';
 
 @Component({
   selector: 'app-solution-list',
   templateUrl: './solution-list.component.html',
   styleUrls: ['./solution-list.component.scss'],
 })
-export class SolutionListComponent {
+export class SolutionListComponent implements OnInit {
   @Input() solutions: Solution[] = [];
   @Input() userEmail: string = '';
 
-  constructor(private solutionService: SolutionService) {}
+  isSolutionControlsVisible: boolean = false;
+  LoggedInUser: User = {
+    name: '',
+    picture: '',
+    email: '',
+    about: '',
+    contacts: '',
+    problem_count: 0,
+  };
+
+  constructor(
+    private solutionService: SolutionService,
+    private userService: UserService,
+    private cookieService: CookieService
+  ) {}
+
+  ngOnInit(): void {
+    this.getLoggedInUserData();
+  }
 
   deleteSolution(solutionId: number) {
-    console.table(this.solutions);
     this.solutionService.deleteUserSolution(solutionId).subscribe(() => {
       const solutionIndex = this.solutions.findIndex(
         (solution) => solution.solution_id === solutionId
       );
       this.solutions.splice(solutionIndex, 1);
-      console.table(this.solutions);
     });
+  }
+
+  getLoggedInUserData() {
+    if (this.cookieService.get('isLoggedIn') === 'true') {
+      this.userService.getUserProfileData().subscribe((data) => {
+        this.LoggedInUser = data;
+      });
+    }
   }
 }

@@ -24,7 +24,7 @@
 
     <div class="solution__controls">
       <div class="controls__top">
-        <a class="solution__link">
+        <a class="solution__link" href="{{ solution.link }}">
           <p class="sr-only">Go to Question</p>
           <ng-icon
             class="icon__link"
@@ -32,12 +32,16 @@
             size="14px"
           ></ng-icon>
         </a>
-        <button type="button" class="solution__edit">
+        <button
+          type="button"
+          class="solution__edit"
+          *ngIf="LoggedInUser.email === userEmail"
+        >
           <p class="sr-only">Edit</p>
           <ng-icon class="icon__edit" name="featherEdit" size="14px"></ng-icon>
         </button>
       </div>
-      <div class="controls__bottom">
+      <div class="controls__bottom" *ngIf="LoggedInUser.email === userEmail">
         <button
           type="button"
           class="solution__delete"
