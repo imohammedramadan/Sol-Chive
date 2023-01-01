@@ -53,9 +53,13 @@ export class HeaderComponent implements OnInit {
   }
 
   getUserData() {
-    this.userService.getUserProfileData().subscribe((user) => {
-      this.user = user;
-    });
+    const isLoggedIn = this.cookieService.get('isLoggedIn');
+
+    if (isLoggedIn === 'true') {
+      this.userService.getUserProfileData().subscribe((user) => {
+        this.user = user;
+      });
+    }
   }
 
   logout() {
