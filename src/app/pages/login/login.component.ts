@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   isSearchError: boolean = false;
   searchEmail: string = '';
   constructor(
-    private authenticationService: AuthService,
+    private authService: AuthService,
     private userService: UserService,
     private router: Router,
     private cookieService: CookieService
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   googleLogin() {
-    this.authenticationService.getGoogleLogin().subscribe({
+    this.authService.getGoogleLogin().subscribe({
       next: (googleObject) => (this.googleLoginUrl = googleObject.redirectUrl),
       complete: () => {
         if (this.cookieService.get('isLoggedIn') === 'true') {

@@ -1,7 +1,11 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+
+import { CookieService } from 'ngx-cookie-service';
 import { Observable } from 'rxjs';
-import { GoogleLogin } from '../interfaces/google-login';
+
+import { GoogleLogin } from 'src/app/interfaces/google-login';
+import { UserService } from './user.service';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -15,7 +19,11 @@ const httpOptions = {
 })
 export class AuthService {
   private apiUrl = 'http://localhost:5000/api/v1/auth/';
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private userService: UserService,
+    private cookieService: CookieService
+  ) {}
 
   getGoogleLogin(): Observable<GoogleLogin> {
     const url = `${this.apiUrl}google`;
@@ -25,5 +33,16 @@ export class AuthService {
   logout(): Observable<any> {
     const url = `${this.apiUrl}logout`;
     return this.http.delete<any>(url, httpOptions);
+  }
+
+  isAuthenticated() {
+    this.userService.getUserBasicInfo().subscribe({
+      next: (res) => {
+        this.cookieService.set('isLoggedIn', 'true');
+      },
+      error: (err) => {
+        this.cookieService.set('isLoggedIn', 'false');
+      },
+    });
   }
 }

@@ -10,15 +10,21 @@ import { AddSolutionComponent } from './pages/add-solution/add-solution.componen
 import { SolutionComponent } from './pages/solution/solution.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 
+import { AuthGuard } from './shared/auth.guard';
+
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'error', component: ErrorPageComponent },
   { path: 'search-result/:email', component: SearchResultComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'settings', component: SettingsComponent },
-  { path: 'add-solution', component: AddSolutionComponent },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+  { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard] },
+  {
+    path: 'add-solution',
+    component: AddSolutionComponent,
+    canActivate: [AuthGuard],
+  },
   { path: 'solution/:email/:id', component: SolutionComponent },
 ];
 
