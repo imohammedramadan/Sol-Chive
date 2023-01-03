@@ -18,7 +18,9 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:5000/api/v1/auth/';
+  private backendUrl = 'http://localhost:5000/';
+  private apiUrl = `${this.backendUrl}api/v1/auth/`;
+
   constructor(
     private http: HttpClient,
     private userService: UserService,

@@ -33,6 +33,7 @@
           ></ng-icon>
         </a>
         <button
+          routerLink="/edit-solution/{{ userEmail }}/{{ solution.solution_id }}"
           type="button"
           class="solution__edit"
           *ngIf="LoggedInUser.email === userEmail"

@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { AddSolution } from 'src/app/interfaces/add-solution';
 import { AllSolutions } from 'src/app/interfaces/all-solutions';
 import { Solution } from 'src/app/interfaces/solution';
+import { UpdateSolution } from '../interfaces/update-solution';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -18,8 +19,9 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class SolutionService {
-  private anonApiUrl = 'http://localhost:5000/api/v1/anonymous';
-  private userApiUrl = 'http://localhost:5000/api/v1/user';
+  private backendUrl = 'http://localhost:5000/';
+  private anonApiUrl = `${this.backendUrl}api/v1/anonymous`;
+  private userApiUrl = `${this.backendUrl}api/v1/user`;
 
   constructor(private http: HttpClient) {}
 
@@ -53,8 +55,8 @@ export class SolutionService {
     return this.http.delete<Solution>(url, httpOptions);
   }
 
-  updateUserSolution(solutionId: number, solution: Solution) {
+  updateUserSolution(solutionId: number, solution: UpdateSolution) {
     const url = `${this.userApiUrl}/solutions/${solutionId}`;
-    return this.http.put<Solution>(url, solution, httpOptions);
+    return this.http.put<UpdateSolution>(url, solution, httpOptions);
   }
 }

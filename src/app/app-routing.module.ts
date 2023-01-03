@@ -26,6 +26,11 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   { path: 'solution/:email/:id', component: SolutionComponent },
+  {
+    path: 'edit-solution/:email/:id',
+    component: SolutionComponent,
+    canActivate: [AuthGuard],
+  },
   { path: '**', redirectTo: '/home' },
 ];
 

@@ -5,11 +5,33 @@
       <p class="heading__source">{{ solution.source }}</p>
     </div>
     <div class="heading__btns" *ngIf="isUserSolution">
-      <button type="button" class="edit__btn btn" (click)="enableEditMode()">
+      <button
+        type="button"
+        class="edit__btn btn"
+        (click)="enableEditMode()"
+        *ngIf="!isEditMode"
+      >
         <p>Edit</p>
         <ng-icon class="icon__edit" name="featherEdit" size="14px"></ng-icon>
       </button>
-      <button type="button" class="delete__btn btn">
+      <button
+        type="button"
+        class="edit__btn btn"
+        (click)="updateSolution()"
+        *ngIf="isEditMode"
+      >
+        <p>Submit</p>
+        <ng-icon
+          class="icon__checkmark"
+          name="featherCheckCircle"
+          size="14px"
+        ></ng-icon>
+      </button>
+      <button
+        type="button"
+        class="delete__btn btn"
+        (click)="deleteSolution(solution.solution_id)"
+      >
         <p>Delete</p>
         <ng-icon class="icon__delete" name="featherTrash" size="14px"></ng-icon>
       </button>
@@ -41,29 +63,57 @@
   <form (ngSubmit)="updateSolution()">
     <div class="solution user-solution">
       <label for="my_solution" *ngIf="isUserSolution">Your Solution</label>
-      <label for="my_solution" *ngIf="!isUserSolution">Solution</label>
+      <label for="my_solution--disabled" *ngIf="!isUserSolution && !isEditMode"
+        >Solution</label
+      >
       <textarea
+        *ngIf="!isEditMode"
+        class="solution__text"
+        name="my_solution"
+        id="my_solution--disabled"
+        cols="30"
+        rows="17"
+        disabled
+        >{{ solution.my_solution }}</textarea
+      >
+      <label for="my_solution--disabled" *ngIf="!isUserSolution && isEditMode"
+        >Solution</label
+      >
+      <textarea
+        *ngIf="isEditMode"
         class="solution__text"
         name="my_solution"
         id="my_solution"
         cols="30"
         rows="17"
-        [attr.disabled]="isEditMode ? null : ''"
-        >{{ solution.my_solution }}</textarea
-      >
+        [(ngModel)]="solution.my_solution"
+      ></textarea>
     </div>
 
     <div class="solution perfect-solution" *ngIf="isUserSolution">
-      <label for="perfect_solution">Perfect Solution</label>
+      <label for="perfect_solution--disabled" *ngIf="!isEditMode"
+        >Perfect Solution</label
+      >
       <textarea
+        *ngIf="!isEditMode"
+        class="solution__text"
+        name="perfect_solution"
+        id="perfect_solution--disabled"
+        cols="30"
+        rows="17"
+        disabled
+        >{{ solution.perfect_solution }}</textarea
+      >
+      <label for="perfect_solution" *ngIf="isEditMode">Perfect Solution</label>
+      <textarea
+        *ngIf="isEditMode"
         class="solution__text"
         name="perfect_solution"
         id="perfect_solution"
         cols="30"
         rows="17"
-        [attr.disabled]="isEditMode ? null : ''"
-        >{{ solution.perfect_solution }}</textarea
-      >
+        [(ngModel)]="solution.perfect_solution"
+      ></textarea>
     </div>
   </form>
 </main>
