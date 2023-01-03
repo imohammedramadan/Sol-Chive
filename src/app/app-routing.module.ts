@@ -26,6 +26,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   { path: 'solution/:email/:id', component: SolutionComponent },
+  { path: '**', redirectTo: '/home' },
 ];
 
 @NgModule({
