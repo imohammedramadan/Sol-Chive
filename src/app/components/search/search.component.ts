@@ -38,6 +38,9 @@ export class SearchComponent implements OnInit {
           this.LoggedInUserEmail = res.email;
           this.findUser();
         });
+      } else {
+        this.LoggedInUserEmail = 'null';
+        this.findUser();
       }
     } else {
       //check if logged in user is searching for himself/herself
