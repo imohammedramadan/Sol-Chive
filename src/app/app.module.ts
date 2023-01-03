@@ -52,8 +52,6 @@ import { ProfileCardComponent } from './components/profile-card/profile-card.com
 import { SearchComponent } from './components/search/search.component';
 import { SolutionListComponent } from './components/solution-list/solution-list.component';
 
-import { AuthGuard } from './shared/auth.guard';
-
 @NgModule({
   declarations: [
     AppComponent,
