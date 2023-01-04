@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { CookieService } from 'ngx-cookie-service';
-
 import { AuthService } from 'src/app/services/auth.service';
 import { UserService } from 'src/app/services/user.service';
 
@@ -18,21 +16,15 @@ export class LoginComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private userService: UserService,
-    private router: Router,
-    private cookieService: CookieService
+    private router: Router
   ) {}
   ngOnInit(): void {
-    this.googleLogin();
+    // this.googleLogin();
   }
 
   googleLogin() {
     this.authService.getGoogleLogin().subscribe({
       next: (googleObject) => (this.googleLoginUrl = googleObject.redirectUrl),
-      complete: () => {
-        if (this.cookieService.get('isLoggedIn') === 'true') {
-          this.router.navigateByUrl('/home');
-        }
-      },
     });
   }
 

@@ -7,10 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 
-import { JwtModule } from '@auth0/angular-jwt';
 import { NgIconsModule } from '@ng-icons/core';
 import { CookieService } from 'ngx-cookie-service';
-// import { JWT_OPTIONS } from '@auth0/angular-jwt';
 
 import {
   featherCheckCircle,
@@ -77,7 +75,6 @@ import { SolutionListComponent } from './components/solution-list/solution-list.
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    JwtModule,
     NgIconsModule.withIcons({
       featherCheckCircle,
       featherChevronDown,

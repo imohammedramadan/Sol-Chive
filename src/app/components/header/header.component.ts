@@ -46,9 +46,8 @@ export class HeaderComponent implements OnInit {
 
   getUserAuthStatus() {
     const isLoggedIn = this.cookieService.get('isLoggedIn');
-
+    if (isLoggedIn === 'false' || isLoggedIn === '') this.isLoggedIn = false;
     if (isLoggedIn === 'true') this.isLoggedIn = true;
-    if (isLoggedIn === 'false') this.isLoggedIn = false;
   }
 
   getUserData() {
@@ -74,9 +73,5 @@ export class HeaderComponent implements OnInit {
         if (event.url === '/login') this.isEmptyHeader = true;
       }
     });
-  }
-
-  loadDefaultPicture() {
-    this.user.picture = 'src/assets/defaultUserPicture.svg';
   }
 }

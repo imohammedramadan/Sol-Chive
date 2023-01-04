@@ -45,9 +45,14 @@ export class SolutionComponent implements OnInit {
   }
 
   getLoggedInUserEmail() {
-    this.userService.getUserProfileData().subscribe((res) => {
-      this.LoggedInUserEmail = res.email;
-      this.getSolutionData();
+    this.userService.getUserProfileData().subscribe({
+      next: (res) => {
+        this.LoggedInUserEmail = res.email;
+        this.getSolutionData();
+      },
+      error: (err) => {
+        this.getSolutionData();
+      },
     });
   }
 
