@@ -1,5 +1,9 @@
 <ul class="solutions__list">
-  <li *ngFor="let solution of solutions" class="solution">
+  <li
+    *ngFor="let solution of solutions"
+    class="solution"
+    [ngClass]="{ 'flex-start': !isSolutionControlsVisible }"
+  >
     <div class="solution__info">
       <div class="info__head">
         <h2 class="info__title">{{ solution.title }}</h2>

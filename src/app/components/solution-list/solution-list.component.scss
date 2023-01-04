@@ -126,6 +126,9 @@
   }
 }
 
+.flex-start {
+  place-items: flex-start;
+}
 @media (max-width: 768px) {
   .solutions__list {
     grid-template-columns: repeat(1, minmax(250px, 426px));
