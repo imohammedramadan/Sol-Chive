@@ -35,6 +35,13 @@ export class LoginComponent implements OnInit {
   }
 
   findUser() {
+    //for demo purposes START
+    if (this.searchEmail === 'mohammed.ramadan1474@gmail.com') {
+      this.router.navigateByUrl(`/search-result/${this.searchEmail}`);
+      return;
+    }
+    //for demo purposes END
+
     this.userService.getAnonUserData(this.searchEmail).subscribe({
       next: (res) =>
         this.router.navigateByUrl(`/search-result/${this.searchEmail}`),

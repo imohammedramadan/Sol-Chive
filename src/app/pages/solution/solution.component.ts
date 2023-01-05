@@ -57,6 +57,106 @@ export class SolutionComponent implements OnInit {
   }
 
   getSolutionData() {
+    //for demo purposes START
+    if (this.routeUserEmail === 'mohammed.ramadan1474@gmail.com') {
+      const solutionArray = [
+        {
+          solution_id: 307,
+          created_on: '2023-01-01T16:46:04.628Z',
+          title: 'Caesar Cipher',
+          link: 'https://www.theodinproject.com/lessons/node-path-javascript-testing-practice',
+          source: 'TheOdinProject',
+          tags: ['array'],
+          my_solution: `const isAlphabetLetter = (letter) => {
+            return letter.match(/[A-Za-z]/);
+          };
+          //rotates from Z to A or from z to a
+          function alphabetRotation(letter) {
+            if (letter.charCodeAt(0) === 122) {
+              return 97;
+            }
+            if (letter.charCodeAt(0) === 90) {
+              return 65;
+            }
+          }
+
+          const caesarCipher = (string) => {
+            let cipheredString = '';
+            for (let index = 0; index < string.length; index++) {
+              if (isAlphabetLetter(string[index])) {
+                if (string[index] === 'Z' || string[index] === 'z') {
+                  cipheredString += String.fromCharCode(alphabetRotation(string[index]));
+                }
+                cipheredString += String.fromCharCode(string.charCodeAt(index) + 1);
+              } else {
+                cipheredString += string[index];
+              }
+            }
+            return cipheredString;
+          };`,
+        },
+        {
+          solution_id: 306,
+          created_on: '2023-01-01T16:46:02.118Z',
+          title: 'Analyze Array',
+          link: 'https://www.theodinproject.com/lessons/node-path-javascript-testing-practice',
+          source: 'TheOdinProject',
+          tags: ['array'],
+          my_solution: `const isArrayOfNumbers = (array) => {
+            if (!Array.isArray(array)) return false;
+            if (array.length === 0) return false;
+
+            for (const item of array) {
+              if (typeof item != 'number') {
+                return false;
+              }
+            }
+            return true;
+          };
+
+          const analyzeArray = (array) => {
+            if (!isArrayOfNumbers(array)) {
+              return 'enter an array of numbers';
+            }
+
+            const min = Math.min(...array);
+            const max = Math.max(...array);
+            const length = array.length;
+            const sum = array.reduce((prev, curr) => (prev += curr), 0);
+            const average = sum / length;
+
+            return { average: average, min: min, max: max, length: length };
+          };`,
+        },
+        {
+          solution_id: 305,
+          created_on: '2023-01-01T16:45:59.222Z',
+          title: 'Capitalize',
+          link: 'https://www.google.com/two-sum',
+          source: 'google',
+          tags: ['array', 'tree'],
+          my_solution: `const capitalize = (string) => {
+            if (typeof string !== 'string') {
+              return 'enter a valid string';
+            }
+            const charsRegEx = /[A-Za-z]/;
+            for (let index = 0; index < string.length; index++) {
+              if (string[index].match(charsRegEx)) {
+                return string.replace(string[index], string[index].toUpperCase());
+              }
+            }
+          };`,
+        },
+      ];
+
+      const solutionIndex = solutionArray.findIndex(
+        (solution) => solution.solution_id === parseInt(this.solutionId)
+      );
+      this.solution = solutionArray[solutionIndex];
+      return;
+    }
+    //for demo purposes END
+
     if (this.LoggedInUserEmail === this.routeUserEmail) {
       this.getUserSolutionData();
       this.isUserSolution = true;

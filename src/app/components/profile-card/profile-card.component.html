@@ -24,9 +24,9 @@
   </div>
   <div class="card__contacts">
     <h3 class="contacts__title">Contacts</h3>
-    <p class="contacts__text">alien.com</p>
-    <p class="contacts__text">Kutt.it/alienvoid</p>
-    <p class="contacts__text">+20123456789</p>
+    <p class="contacts__text" *ngFor="let contact of contactsArray">
+      {{ contact }}
+    </p>
   </div>
   <div class="card__problems">
     <h3 class="problems__title">Solved:</h3>

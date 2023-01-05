@@ -26,8 +26,39 @@ export class SearchResultComponent implements OnInit {
 
   getSolutions() {
     const email: string = this.route.snapshot.paramMap.get('email')!;
-    this.solutionService.getAnonSolutions(email).subscribe((SolutionObject) => {
-      this.solutions = SolutionObject.solutions;
+    //for demo purposes START
+    if (email === 'mohammed.ramadan1474@gmail.com') {
+      this.solutions = [
+        {
+          solution_id: 307,
+          created_on: '2023-01-01T16:46:04.628Z',
+          title: 'Caesar Cipher',
+          link: 'https://www.theodinproject.com/lessons/node-path-javascript-testing-practice',
+          source: 'TheOdinProject',
+          tags: ['array'],
+        },
+        {
+          solution_id: 306,
+          created_on: '2023-01-01T16:46:02.118Z',
+          title: 'Analyze Array',
+          link: 'https://www.theodinproject.com/lessons/node-path-javascript-testing-practice',
+          source: 'TheOdinProject',
+          tags: ['array'],
+        },
+        {
+          solution_id: 305,
+          created_on: '2023-01-01T16:45:59.222Z',
+          title: 'Capitalize',
+          link: 'https://www.theodinproject.com/lessons/node-path-javascript-testing-practice',
+          source: 'TheOdinProject',
+          tags: ['array'],
+        },
+      ];
+      return;
+    }
+    //for demo purposes end
+    this.solutionService.getAnonSolutions(email).subscribe((solutionObject) => {
+      this.solutions = solutionObject.solutions;
     });
   }
 }
