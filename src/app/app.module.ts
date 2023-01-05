@@ -14,7 +14,6 @@ import {
   featherCheckCircle,
   featherChevronDown,
   featherChevronUp,
-  featherChrome,
   featherCopy,
   featherEdit,
   featherExternalLink,
@@ -30,6 +29,7 @@ import {
   featherTwitter,
   featherXCircle,
 } from '@ng-icons/feather-icons';
+import { bootstrapGoogle } from '@ng-icons/bootstrap-icons';
 
 import { AppComponent } from './app.component';
 
@@ -79,7 +79,6 @@ import { SolutionListComponent } from './components/solution-list/solution-list.
       featherCheckCircle,
       featherChevronDown,
       featherChevronUp,
-      featherChrome,
       featherCopy,
       featherEdit,
       featherExternalLink,
@@ -94,6 +93,7 @@ import { SolutionListComponent } from './components/solution-list/solution-list.
       featherTrash,
       featherTwitter,
       featherXCircle,
+      bootstrapGoogle,
     }),
   ],
   providers: [CookieService],
