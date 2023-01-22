@@ -1,6 +1,16 @@
-# SolChive
+# Sol-Chive
 
 Solution Archive is an open-source application to archive problems such as leetcode problems and their solutions.
+
+## Technologies
+- Angular
+- TypeScript
+- SASS
+- RxJS
+- Using BEM methodology
+- Public routes for all users
+- Guarded private routes for authenticated users
+- Authentication via google
 
 ## Screenshots
 <p align="center">
