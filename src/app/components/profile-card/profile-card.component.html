@@ -35,4 +35,7 @@
       Problem<span *ngIf="user.problem_count > 1">s</span>
     </p>
   </div>
+  <div class="settings_btn" *ngIf="isLoggedIn">
+    <a routerLink="/settings"><p>Settings</p></a>
+  </div>
 </aside>

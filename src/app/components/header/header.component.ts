@@ -72,6 +72,7 @@ export class HeaderComponent implements OnInit {
         this.isEmptyHeader = false;
         this.isUserMenuOpen = false;
         if (event.urlAfterRedirects === '/login') this.isEmptyHeader = true;
+        if (event.urlAfterRedirects === '/error') this.isEmptyHeader = true;
       }
     });
   }

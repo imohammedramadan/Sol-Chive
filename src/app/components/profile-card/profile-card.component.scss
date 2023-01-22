@@ -64,5 +64,32 @@
   color: var(--text-color-secondary);
 }
 
+.settings_btn {
+  margin-top: 4px;
+  display: flex;
+  place-self: center;
+  background-color: var(--orange-100);
+  border-radius: 6px;
+  width: 68px;
+  height: 20px;
+
+  &:hover {
+    background-color: var(--orange-100-dim);
+  }
+  a {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    place-content: center;
+    place-items: center;
+
+    p {
+      font-size: 14px;
+      color: var(--text-color-dark);
+    }
+  }
+}
+
 @media (max-width: 576px) {
 }
