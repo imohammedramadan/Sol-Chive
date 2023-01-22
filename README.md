@@ -28,6 +28,7 @@ Mobile
 <img src="https://user-images.githubusercontent.com/61327194/213921805-bea2bd70-bb77-442f-900c-2a4eb321ef51.png" alt="" border="0" height="25%" width="25%">
 <img src="https://user-images.githubusercontent.com/61327194/213921806-f2a0c9c0-ab0f-41e5-9749-24ab053bb0bc.png" alt="" border="0" height="25%" width="25%">
 </p>
+
 ## Run Locally
 
 Clone the project
